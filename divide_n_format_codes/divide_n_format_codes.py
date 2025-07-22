@@ -24,14 +24,18 @@ def row_format(df_updated):
             if new:
                 row["Old"] = old[0]
                 row["New"] = new[0]
-                row["Назва"] = row["Назва"][row["Назва"].index(new[0]) + 2:].strip()
+                row["Назва"] = row["Назва"][row["Назва"].index(new[0])  + len(new[0]) + 2:]
             else:
                 row["Standard"] = old[0]
-                row["Назва"] = row["Назва"][row["Назва"].index(old[0]) + 1:]
+                row["Назва"] = row["Назва"][row["Назва"].index(old[0]) + len(old[0]):]
         row["Назва"] = row["Назва"].strip().lstrip("- ")
         df_updated.loc[index] = row
 
-df_updated.to_excel('output.xlsx', index=False)
+    return df_updated
+
+df_to_save = row_format(df_updated)
+
+df_to_save.to_excel('output.xlsx', index=False)
 print("done")
 
 if __name__ == "__main__":
