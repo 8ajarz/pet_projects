@@ -1,0 +1,4 @@
+There are just my old pet projects
+"12mo_sales_bonus_counter.py" accepts .xlsx file, iterates over last 12 months and counts a sales bonus, basing a sourse of an income
+"AppsScript_income_updater.gs" is an AppsScript file, meant to be used on googlesheets to count an income
+"BoG_income_counter.py" - BoG was (is?) used to send terrifically formatted rapports about transactions. The script is meant to count the income/losses and show a result
