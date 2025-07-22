@@ -2,7 +2,6 @@
 
 import pandas as pd
 import re
-from time import time
 
 df = pd.read_excel('to_format.xlsx', sheet_name=0)
 
@@ -35,12 +34,9 @@ def row_format(df_updated):
 
     return df_updated
 
-start = time()
 df_to_save = row_format(df_updated)
-end = time()
 
 df_to_save.to_excel('output.xlsx', index=False)
-print("It took", end - start)
 
 if __name__ == "__main__":
     pass
